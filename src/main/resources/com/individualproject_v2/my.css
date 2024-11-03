@@ -1,0 +1,65 @@
+.main{
+    -fx-background-color: linear-gradient(from 30% 0% to 100% 100%,
+            rgba(127,145,198,1) 12%,
+            rgba(255,255,255,1) 59%);
+}
+
+/*
+@font-face {
+    font-family: 'BonaNova';
+    src: url('@../../fonts/BonaNova.ttf');
+}
+*/
+
+.side_panel{
+    -fx-background-color: rgba(72, 0, 0, 1) ;
+    -fx-border-radius: 0 20px 20px 0;
+    -fx-background-radius: 0 20px 20px 0;
+}
+.title_pane{
+    -fx-background-color: rgba(40, 3, 3, 1) ;
+    -fx-border-radius: 0 20px 0 0;
+    -fx-background-radius: 0 20px 0  0;
+    /*-fx-border-width: 2px 2px 2px 2px;
+    -fx-border-style: solid;*/
+}
+
+.title_label {
+/*
+    -fx-font-family: 'BonaNova';
+    -fx-font-size: 18px
+*/
+}
+
+.title_image{
+}
+
+.side_btn{
+    -fx-background-color:#FFFFFF;
+    -fx-background-radius: 12px;
+}
+
+.help_button {
+    -fx-text-fill: #FFFFFF;
+    -fx-background-radius: 20px;
+    -fx-background-color:#11253E;
+}
+
+.inter_btn {
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    /*-fx-border-width: 1px;
+    -fx-border-style: solid;*/
+}
+.add_inter_btn{
+    -fx-background-color: #7bed51 ;
+}
+.edit_inter_btn{
+    -fx-background-color: #9fdfff ;
+}
+.delete_inter_btn{
+    -fx-background-color: #dd2525 ;
+}
+.search_inter_btn{
+    -fx-background-color: #ffffff ;
+}
