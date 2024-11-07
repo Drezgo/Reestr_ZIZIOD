@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<HBox fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" styleClass="main" stylesheets="@my.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1">
+<HBox fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" styleClass="main" stylesheets="@my.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.individualproject_v2.MainController">
    <children>
       <VBox alignment="CENTER_LEFT" maxWidth="400.0" prefHeight="600.0" prefWidth="200.0" styleClass="side_panel" HBox.hgrow="ALWAYS">
          <children>
@@ -25,7 +25,7 @@
                <children>
                   <Pane fx:id="title_pane" prefHeight="98.0" prefWidth="314.0" styleClass="title_pane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                      <children>
-                        <ImageView fx:id="title_image" fitHeight="60.0" fitWidth="60.0" layoutX="14.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" styleClass="title_image">
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="14.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" styleClass="title_image">
                            <image>
                               <Image url="@../../images/dsns.png" />
                            </image>
@@ -33,7 +33,7 @@
                               <Rectangle2D />
                            </viewport>
                         </ImageView>
-                        <Label fx:id="title_label" alignment="CENTER" layoutX="84.0" layoutY="25.0" prefHeight="49.0" prefWidth="202.0" styleClass="title_label" text="Єдиниий реєстр ЗІЗОД ДСНС України" textFill="WHITE" wrapText="true">
+                        <Label alignment="CENTER" layoutX="84.0" layoutY="25.0" prefHeight="49.0" prefWidth="202.0" styleClass="title_label" text="Єдиниий реєстр ЗІЗОД ДСНС України" textFill="WHITE" wrapText="true">
                            <font>
                               <Font name="Century Gothic Bold" size="17.0" />
                            </font>
@@ -53,7 +53,7 @@
                   </Button>
                </top>
                <center>
-                  <Button fx:id="side_btn2" maxHeight="40.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Нормативи ДСНС по ЗІЗОД" BorderPane.alignment="CENTER">
+                  <Button fx:id="side_btn2" maxHeight="40.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Нормативи ДСНС по ЗІЗОД" BorderPane.alignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
