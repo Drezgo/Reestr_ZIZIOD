@@ -43,7 +43,7 @@
             </AnchorPane>
             <BorderPane prefHeight="555.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                <top>
-                  <Button fx:id="side_btn1" maxHeight="40.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Здійснити запис перевірки ЗІЗІОД" BorderPane.alignment="CENTER">
+                  <Button fx:id="side_btn1" maxHeight="40.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" style="-fx-background-color: #c4c4c4;" styleClass="side_btn" text="Здійснити запис перевірки ЗІЗІОД" BorderPane.alignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -53,14 +53,14 @@
                   </Button>
                </top>
                <center>
-                  <Button fx:id="side_btn2" maxHeight="40.0" mnemonicParsing="false" onAction="#switchToScene2" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Нормативи ДСНС по ЗІЗОД" BorderPane.alignment="CENTER">
+                  <Button fx:id="side_btn2" maxHeight="40.0" mnemonicParsing="false" onAction="#goTo2" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Нормативи ДСНС по ЗІЗОД" BorderPane.alignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
                   </Button>
                </center>
                <bottom>
-                  <Button fx:id="side_btn3" maxHeight="40.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Довідник ЗІЗОД" BorderPane.alignment="CENTER">
+                  <Button fx:id="side_btn3" maxHeight="40.0" mnemonicParsing="false" onAction="#goTo3" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Довідник ЗІЗОД" BorderPane.alignment="CENTER">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -72,7 +72,7 @@
             </BorderPane>
             <AnchorPane prefHeight="200.0" prefWidth="300.0">
                <children>
-                  <Button fx:id="help_btn" layoutX="20.0" layoutY="17.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" styleClass="help_button" text="Допомога" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                  <Button fx:id="help_btn" layoutX="20.0" layoutY="17.0" mnemonicParsing="false" onAction="#openHyperlink" prefHeight="39.0" prefWidth="240.0" styleClass="help_button" text="Допомога" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                      <font>
                         <Font name="System Bold" size="12.0" />
                      </font>
@@ -85,10 +85,10 @@
          <children>
             <AnchorPane prefHeight="78.0" prefWidth="542.0">
                <children>
-                  <TextField layoutX="201.2" layoutY="51.0" maxWidth="226.0" prefHeight="32.0" prefWidth="226.0" promptText="Введіть дані для пошуку..." AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="70.0" />
-                  <Button layoutX="482.0" layoutY="51.0" maxHeight="32.0" maxWidth="140.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="23.0" AnchorPane.rightAnchor="20.399999999999977">
+                  <TextField fx:id="searchField" layoutX="201.2" layoutY="51.0" maxWidth="226.0" prefHeight="32.0" prefWidth="226.0" promptText="Введіть дані для пошуку..." AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="70.0" />
+                  <Button fx:id="btnFind" layoutX="482.0" layoutY="51.0" maxHeight="32.0" maxWidth="140.0" mnemonicParsing="false" onAction="#showSearch" prefHeight="32.0" prefWidth="23.0" AnchorPane.rightAnchor="20.399999999999977">
                      <graphic>
-                        <ImageView fx:id="search_btn" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/search.png" />
                            </image>
@@ -98,9 +98,9 @@
                         <String fx:value="inter_btn" />
                         <String fx:value="side_btn" />
                      </styleClass></Button>
-                  <Button layoutX="23.0" layoutY="51.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="26.0" AnchorPane.leftAnchor="20.0">
+                  <Button fx:id="btnAdd" layoutX="23.0" layoutY="51.0" mnemonicParsing="false" onAction="#openWindow" prefHeight="32.0" prefWidth="26.0" AnchorPane.leftAnchor="20.0">
                      <graphic>
-                        <ImageView fx:id="add_btn" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../images/add.png" />
                            </image>
@@ -111,7 +111,7 @@
                         <String fx:value="add_inter_btn" />
                      </styleClass>
                   </Button>
-                  <Button layoutX="170.0" layoutY="51.0" maxWidth="100.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="30.0" AnchorPane.leftAnchor="70.0">
+                  <Button fx:id="btnEdit" layoutX="170.0" layoutY="51.0" maxWidth="100.0" mnemonicParsing="false" onAction="#openWindow" prefHeight="32.0" prefWidth="30.0" AnchorPane.leftAnchor="70.0">
                      <graphic>
                         <ImageView fx:id="edit_btn" fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -124,7 +124,7 @@
                         <String fx:value="edit_inter_btn" />
                      </styleClass>
                   </Button>
-                  <Button fx:id="del_btn" layoutX="204.0" layoutY="51.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="27.0" AnchorPane.leftAnchor="120.0">
+                  <Button fx:id="btnDel" layoutX="204.0" layoutY="51.0" mnemonicParsing="false" onAction="#openWindow" prefHeight="32.0" prefWidth="27.0" AnchorPane.leftAnchor="120.0">
                      <graphic>
                         <ImageView fitHeight="24.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -141,12 +141,12 @@
             </AnchorPane>
             <AnchorPane prefHeight="362.0" prefWidth="499.0" VBox.vgrow="ALWAYS">
                <children>
-                  <TableView layoutX="26.0" layoutY="20.0" prefHeight="322.0" prefWidth="472.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+                  <TableView fx:id="tableReyestrBook" layoutX="26.0" layoutY="20.0" prefHeight="322.0" prefWidth="472.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
                     <columns>
-                      <TableColumn prefWidth="81.60000610351562" text="Номер" />
-                      <TableColumn prefWidth="101.5999755859375" text="Модель" />
-                        <TableColumn prefWidth="128.800048828125" text="Тиск" />
-                        <TableColumn prefWidth="133.5999755859375" text="Хто прийняв" />
+                      <TableColumn fx:id="columnNUM" prefWidth="81.60000610351562" text="Номер" />
+                      <TableColumn fx:id="columnMODEL" prefWidth="101.5999755859375" text="Модель" />
+                        <TableColumn fx:id="columnPRESS" prefWidth="128.800048828125" text="Тиск" />
+                        <TableColumn fx:id="columnPIP" prefWidth="133.5999755859375" text="Хто прийняв" />
                     </columns>
                      <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -156,7 +156,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="77.0" prefWidth="499.0">
                <children>
-                  <Label layoutX="24.0" layoutY="30.0" text="Кількість записів: 0" />
+                  <Label fx:id="labelCount" layoutX="24.0" layoutY="30.0" text="Кількість записів: 0" />
                </children>
             </AnchorPane>
          </children>

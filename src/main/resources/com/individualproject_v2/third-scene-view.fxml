@@ -4,6 +4,7 @@
 <?import javafx.geometry.Rectangle2D?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,6 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
 <HBox fx:id="main" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0" styleClass="main" stylesheets="@my.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.individualproject_v2.ThirdController">
@@ -39,7 +41,7 @@
                 </AnchorPane>
                 <BorderPane prefHeight="555.0" prefWidth="300.0" VBox.vgrow="ALWAYS">
                     <top>
-                        <Button fx:id="side_btn1" maxHeight="40.0" mnemonicParsing="false" onAction="#switchToScene1" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Здійснити запис перевірки ЗІЗІОД" BorderPane.alignment="CENTER">
+                        <Button fx:id="side_btn1" maxHeight="40.0" mnemonicParsing="false" onAction="#goTo1" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Здійснити запис перевірки ЗІЗІОД" BorderPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -49,14 +51,14 @@
                         </Button>
                     </top>
                     <center>
-                        <Button fx:id="side_btn2" maxHeight="40.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Нормативи ДСНС по ЗІЗОД" BorderPane.alignment="CENTER">
+                        <Button fx:id="side_btn2" maxHeight="40.0" mnemonicParsing="false" onAction="#goTo2" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Нормативи ДСНС по ЗІЗОД" BorderPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </Button>
                     </center>
                     <bottom>
-                        <Button fx:id="side_btn3" maxHeight="40.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" styleClass="side_btn" text="Довідник ЗІЗОД" BorderPane.alignment="CENTER">
+                        <Button fx:id="side_btn3" maxHeight="40.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" style="-fx-background-color: #c4c4c4;" styleClass="side_btn" text="Довідник ЗІЗОД" BorderPane.alignment="CENTER">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -68,7 +70,7 @@
                 </BorderPane>
                 <AnchorPane prefHeight="200.0" prefWidth="300.0">
                     <children>
-                        <Button fx:id="help_btn" layoutX="20.0" layoutY="17.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="240.0" styleClass="help_button" text="Допомога" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                        <Button fx:id="help_btn" layoutX="20.0" layoutY="17.0" mnemonicParsing="false" onAction="#openHyperlink" prefHeight="39.0" prefWidth="240.0" styleClass="help_button" text="Допомога" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
                             <font>
                                 <Font name="System Bold" size="12.0" />
                             </font>
@@ -79,15 +81,20 @@
         </VBox>
         <VBox alignment="CENTER" prefHeight="600.0" prefWidth="499.0" HBox.hgrow="ALWAYS">
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <Label layoutX="138.0" layoutY="73.0" text="THIRD Scene 3">
-                     <font>
-                        <Font size="36.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
+            <ScrollPane prefHeight="638.0" prefWidth="599.0" stylesheets="@my.css">
+               <content>
+                  <AnchorPane prefHeight="611.0" prefWidth="599.0" styleClass="main">
+                     <children>
+                        <Label layoutX="216.0" layoutY="32.0" text="Довідник">
+                           <font>
+                              <Font name="Century Gothic Bold Italic" size="36.0" />
+                           </font>
+                        </Label>
+                        <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="200.0" layoutY="90.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </ScrollPane>
          </children>
         </VBox>
     </children>
